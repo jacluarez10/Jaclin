@@ -1,0 +1,197 @@
+:root {
+    --card-height: 500px;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #191c29;
+    
+  }
+
+  .header{
+    height: 100px;
+    position: absolute;
+    top: 0;
+    background-color: #D8D2C2;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+   
+  }
+
+  .footer{
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-color: #D8D2C2;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+  }
+  
+  .LokiCover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .wrapper{
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .card:hover .wrapper {
+    filter: brightness(30%);
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  .wrapper::before,
+  .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+  }
+  .wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(66, 66, 16, 0.5) 68%,
+      rgba(46, 0, 0, 0.671) 97%
+    );
+  }
+  .wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  
+  .card:hover .wrapper::before,
+  .wrapper::after {
+    opacity: 1;
+  }
+  
+  .card:hover .wrapper::after {
+    height: 120px;
+  }
+  .name {
+    width: 100%;
+    transition: transform .5s;
+  }
+  .card:hover .name {
+    transform: translate3d(0%, -50px, 100px);
+  }
+  
+  .portrait {
+    
+    width: 140%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .card:hover .portrait {
+    width: 120%;
+    opacity: 1;
+    transform: translate3d(0%, -20%, 100px);
+  }
+  
+  .card:hover #gwenP {
+    width: 120%;
+    opacity: 1;
+    transform: translate3d(0%, -15%, 100px);
+  }
+  
+  .card:hover #miguelP {
+    width: 120%;
+    opacity: 1;
+    transform: translate3d(0%, -15%, 100px);
+  }
+  
+  .card:hover #punkP {
+    width: 120%;
+    opacity: 1;
+    transform: translate3d(0%, -5%, 100px);
+  }
+  
+  .card:hover #pavitP {
+    width: 100%;
+    opacity: 1;
+    transform: translate3d(0%, -17%, 100px);
+  } 
+  
+  
+  .bg{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  filter: brightness(50%);
+  }
+  
+  .title{
+  position: absolute;
+  top: 7rem;
+  }
+  
+  
+  .bgMiles{
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+  }
+  
+  .card:hover .bgMiles{
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .start{
+    margin-left: 20px;
+  }
+
+  .end{
+    margin-right: 20px;
+  }
+  
+  
